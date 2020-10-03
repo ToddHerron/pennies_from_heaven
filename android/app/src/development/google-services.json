@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "387393806114",
+    "firebase_url": "https://pennies-from-heaven---de-fe0ac.firebaseio.com",
+    "project_id": "pennies-from-heaven---de-fe0ac",
+    "storage_bucket": "pennies-from-heaven---de-fe0ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387393806114:android:79653105173b1d8c9c8f7b",
+        "android_client_info": {
+          "package_name": "app.pennies_from_heaven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387393806114-bmu498rvl3kdnkb035h7gtfrtspi7b4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAKWeSD3I6QOaXxmKVsvE1TfllCDT5Hxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387393806114-bmu498rvl3kdnkb035h7gtfrtspi7b4s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "387393806114-dcbpbavfurjin900162vgg1j5mo5tjll.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.penniesfromheaven.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
