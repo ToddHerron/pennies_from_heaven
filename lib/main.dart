@@ -1,80 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-
-class AppConfig {
-  final String appName;
-  final String flavorName;
-  final String apiBaseUrl;
-
-  AppConfig({
-    this.appName,
-    this.flavorName,
-    this.apiBaseUrl,
-  });
-
-  static AppConfig _instance;
-
-  static AppConfig getInstance({appName, flavorName, apiBaseUrl}) {
-    print ("AppConfig .... getInstance() method");
-
-    if (_instance == null) {
-      _instance = AppConfig(
-          appName: appName, flavorName: flavorName, apiBaseUrl: apiBaseUrl);
-      print('APP CONFIGURED FOR: $flavorName');
-      return _instance;
-    }
-    return _instance;
-  }
-}
-
-void startProduction() {
-  print("startProduction() .... Production initialization");
-  AppConfig.getInstance(
-    appName: 'PRODUCTION',
-    flavorName: 'production',
-    apiBaseUrl: 'https://myservice.production/api/v1',
-  );
-  print("startProduction() .... AppConfig.getInstance().appName    = " + AppConfig.getInstance().appName);
-  print("startProduction() .... AppConfig.getInstance().flavorName = " + AppConfig.getInstance().flavorName);
-  print("startProduction() .... AppConfig.getInstance().apiBaseUrl = " + AppConfig.getInstance().apiBaseUrl);
-}
-
-void startDevelopment() {
-  print("startDevelopment() .... Development initialization");
-  AppConfig.getInstance(
-    appName: 'DEVELOPMENT',
-    flavorName: 'development',
-    apiBaseUrl: 'https://myservice.production/api/v1',
-  );
-  print("startDevelopment() .... AppConfig.getInstance().appName    = " + AppConfig.getInstance().appName);
-  print("startDevelopment() .... AppConfig.getInstance().flavorName = " + AppConfig.getInstance().flavorName);
-  print("startDevelopment() .... AppConfig.getInstance().apiBaseUrl = " + AppConfig.getInstance().apiBaseUrl);
-}
-
-
+import 'common/appConfig.dart';
+import 'common/initializingFunctions.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  const MethodChannel('flavor')
-      .invokeMethod<String>('getFlavor')
-      .then((String flavor) {
-    print('STARTED WITH FLAVOR $flavor');
-    if (flavor == 'production') {
-      startProduction();
-    } else if (flavor == 'development') {
-      startDevelopment();
-    }
-// add other environments here
-  }).catchError((error) {
-    print(error);
-    print('FAILED TO LOAD FLAVOR');
-  });
-
+  getFlavor();
   runApp(MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -125,8 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            Text('Flavor = ${AppConfig.getInstance().flavorName}',
-                style: Theme.of(context).textTheme.headline5,)
+            Text(
+              'Flavor = ${AppConfig.getInstance().flavorName}',
+              style: Theme.of(context).textTheme.headline5,
+            )
           ],
         ),
       ),
