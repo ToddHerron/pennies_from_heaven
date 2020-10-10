@@ -41,6 +41,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access to photos for Avatar image</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access camera to take Avatar picture and store it</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need to provide microphone usage description NSMicrophoneUsageDescription</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
