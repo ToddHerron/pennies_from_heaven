@@ -42,14 +42,11 @@ class HomePage extends StatelessWidget {
       // 2. Upload the image to remote Storage / get url
       if (file != null) {
         final storage = Provider.of<FirebaseStorageService>(context);
-        final user = Provider.of<User>(context, listen: false);
-        final downloadUrl =
-            await storage.uploadAvatar(uid: user.uid, file: file);
+        final downloadUrl = await storage.uploadAvatar(file: file);
 
         // 3. Save url to remote Firestore
         final database = Provider.of<FirestoreService>(context);
-        await database.setAvatarReference(
-            uid: user.uid, avatarReference: AvatarReference(downloadUrl));
+        await database.setAvatarReference(AvatarReference(downloadUrl));
 
         // 4. Delete the local file
         await file.delete();
@@ -100,10 +97,9 @@ class HomePage extends StatelessWidget {
 
   Widget _buildUserInfo({BuildContext context}) {
     final database = Provider.of<FirestoreService>(context);
-    final user = Provider.of<User>(context, listen: false);
 
     return StreamBuilder<AvatarReference>(
-        stream: database.avatarReferenceStream(uid: user.uid),
+        stream: database.avatarReferenceStream(),
         builder: (context, snapshot) {
           final avatarReference = snapshot.data;
           return Avatar(
