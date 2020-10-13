@@ -21,7 +21,7 @@ class FirebaseStorageService {
     @required String path,
     @required String contentType,
   }) async {
-    print('uploading to: $path');
+    // print('uploading to: $path');
     final storageReference = FirebaseStorage.instance.ref().child(path);
     final uploadTask = storageReference.putFile(
         file, StorageMetadata(contentType: contentType));
@@ -32,7 +32,7 @@ class FirebaseStorageService {
     }
     // Url used to download file/image
     final downloadUrl = await snapshot.ref.getDownloadURL();
-    print('downloadUrl: $downloadUrl');
+    // print('downloadUrl: $downloadUrl');
     return downloadUrl;
   }
 }

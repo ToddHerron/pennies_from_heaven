@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider<FirebaseAuthService>(create: (_) => FirebaseAuthService()),
         Provider<ImagePickerService>(create: (_) => ImagePickerService()),
+        ChangeNotifierProvider<ValueNotifier<bool>>(
+            create: (_) => ValueNotifier<bool>(false)) // avatarLoading toggle
       ],
       child: AuthWidgetBuilder(builder: (context, userSnapshot) {
         return MaterialApp(
