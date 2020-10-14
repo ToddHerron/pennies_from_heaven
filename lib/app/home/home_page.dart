@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {
     try {
-      final auth = Provider.of<FirebaseAuthService>(context);
+      final auth = context.read<FirebaseAuthService>();
       await auth.signOut();
     } catch (e) {
       print(e);
@@ -33,18 +33,18 @@ class HomePage extends StatelessWidget {
   Future<void> _chooseAvatar(BuildContext context) async {
     try {
       // 1. Get image from picker
-      final imagePicker = Provider.of<ImagePickerService>(context);
+      final imagePicker = context.read<ImagePickerService>();
       final file = await imagePicker.pickImage(source: ImageSource.gallery);
 
       // 2. Upload the image to remote Storage / get url
       if (file != null) {
         // set avatarLoading to true
 
-        final storage = Provider.of<FirebaseStorageService>(context);
+        final storage = context.read<FirebaseStorageService>();
         final downloadUrl = await storage.uploadAvatar(file: file);
 
         // 3. Save url to remote Firestore
-        final database = Provider.of<FirestoreService>(context);
+        final database = context.read<FirestoreService>();
         await database.setAvatarReference(AvatarReference(downloadUrl));
 
         // 4. Delete the local file
@@ -118,9 +118,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildUserInfo({BuildContext context}) {
-    final database = Provider.of<FirestoreService>(context);
-    final avatarLoading =
-        Provider.of<ValueNotifier<bool>>(context, listen: false);
+    final database = context.watch<FirestoreService>();
+    final avatarLoading = context.watch<ValueNotifier<bool>>();
 
     return StreamBuilder<AvatarReference>(
         stream: database.avatarReferenceStream(),

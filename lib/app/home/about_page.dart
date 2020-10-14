@@ -1,6 +1,5 @@
 import 'package:pennies_from_heaven/common_widgets/avatar.dart';
 import 'package:pennies_from_heaven/models/avatar_reference.dart';
-import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 import 'package:pennies_from_heaven/services/firestore_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,12 +45,13 @@ class AboutPage extends StatelessWidget {
   }
 
   Widget _buildUserInfo({BuildContext context}) {
-    final user = Provider.of<User>(context);
-    final database = Provider.of<FirestoreService>(context);
+    final database = context.watch<FirestoreService>();
+
     return StreamBuilder<AvatarReference>(
       stream: database.avatarReferenceStream(),
       builder: (context, snapshot) {
         final avatarReference = snapshot.data;
+
         return Avatar(
           photoUrl: avatarReference?.downloadUrl,
           radius: 50,
