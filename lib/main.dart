@@ -1,4 +1,5 @@
 import 'package:pennies_from_heaven/app/auth_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:pennies_from_heaven/app/auth_widget_builder.dart';
@@ -8,8 +9,10 @@ import 'package:provider/provider.dart';
 
 import 'common/initializingFunctions.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   getFlavor();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

@@ -20,7 +20,6 @@ void startDevelopment() {
 }
 
 void getFlavor() {
-  WidgetsFlutterBinding.ensureInitialized();
   const MethodChannel('flavor')
       .invokeMethod<String>('getFlavor')
       .then((String flavor) {

@@ -1,10 +1,10 @@
+import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:pennies_from_heaven/app/home/home_page.dart';
 import 'package:pennies_from_heaven/app/sign_in/sign_in_page.dart';
-import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 
-// Builds the signecd-in or non-signed-in UI, depending on the user snapshot
-// This widtget should be below the [MaterialApp].
+// Builds the signed-in or non-signed-in UI, depending on the user snapshot
+// This widget should be below the [MaterialApp].
 // An [AuthWidgetBuilder] ancestor is require for this widget to work.
 
 class AuthWidget extends StatelessWidget {

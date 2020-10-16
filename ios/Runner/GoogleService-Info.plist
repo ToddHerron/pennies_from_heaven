@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1002814025305-t5879nbkq8jaos6aqjkneae1tso5f7sj.apps.googleusercontent.com</string>
+	<string>387393806114-dcbpbavfurjin900162vgg1j5mo5tjll.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1002814025305-t5879nbkq8jaos6aqjkneae1tso5f7sj</string>
+	<string>com.googleusercontent.apps.387393806114-dcbpbavfurjin900162vgg1j5mo5tjll</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDPROZwQoHWuaQXp4eDisZ_5wVnyU_vXew</string>
+	<string>AIzaSyAXRlbjSw0KNCHnSXa956T7G0H_-xxktkc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1002814025305</string>
+	<string>387393806114</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>app.penniesfromheaven</string>
+	<string>app.penniesfromheaven.dev</string>
 	<key>PROJECT_ID</key>
-	<string>pennies-from-heaven</string>
+	<string>pennies-from-heaven---de-fe0ac</string>
 	<key>STORAGE_BUCKET</key>
-	<string>pennies-from-heaven.appspot.com</string>
+	<string>pennies-from-heaven---de-fe0ac.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1002814025305:ios:55b71dec04017c6572cb48</string>
+	<string>1:387393806114:ios:5bc207ed77d297c39c8f7b</string>
 	<key>DATABASE_URL</key>
-	<string>https://pennies-from-heaven.firebaseio.com</string>
+	<string>https://pennies-from-heaven---de-fe0ac.firebaseio.com</string>
 </dict>
 </plist>

@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
 
 @immutable
@@ -8,14 +8,16 @@ class User {
 }
 
 class FirebaseAuthService {
-  final _firebaseAuth = FirebaseAuth.instance;
+  final _firebaseAuth = auth.FirebaseAuth.instance;
+  // final _firebaseAuth = auth.FirebaseAuth.instanceFor();
+  // final _firebaseAuth = auth.FirebaseAuth.instance.currentUser;
 
-  User _userFromFirebase(FirebaseUser user) {
+  User _userFromFirebase(auth.User user) {
     return user == null ? null : User(uid: user.uid);
   }
 
-  Stream<User> get onAuthStateChanged {
-    return _firebaseAuth.onAuthStateChanged.map(_userFromFirebase);
+  Stream<User> get authStateChanges {
+    return _firebaseAuth.authStateChanges().map(_userFromFirebase);
   }
 
   Future<User> signInAnonymously() async {
