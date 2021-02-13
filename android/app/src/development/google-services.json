@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:387393806114:android:79653105173b1d8c9c8f7b",
+        "mobilesdk_app_id": "1:387393806114:android:9b35f4a0b6d037279c8f7b",
         "android_client_info": {
-          "package_name": "app.pennies_from_heaven"
+          "package_name": "app.penniesfromheaven.dev"
         }
       },
       "oauth_client": [

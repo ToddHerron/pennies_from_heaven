@@ -1,11 +1,11 @@
-package app.pennies_from_heaven;
+package app.penniesfromheaven;
 
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 import androidx.annotation.NonNull;
 
-import app.pennies_from_heaven.BuildConfig;
+import app.penniesfromheaven.BuildConfig;
 
 import io.flutter.embedding.engine.FlutterEngine;
 

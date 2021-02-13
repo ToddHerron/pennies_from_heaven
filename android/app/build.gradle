@@ -56,12 +56,17 @@ android {
     
     productFlavors {
 
-        development {
+        dev {
             dimension "app"
+            resValue "string", "app_name", "Dev - Pennies From Heaven"
+            applicationId "app.penniesfromheaven.dev"
+            versionNameSuffix "-dev"
         }
 
-        production {
+        prod {
             dimension "app"
+            resValue "string", "app_name", "Prod - Pennies From Heaven"
+            applicationId "app.penniesfromheaven"
         }
     }
 }
