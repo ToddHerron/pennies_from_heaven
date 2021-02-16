@@ -5,7 +5,7 @@ import 'appConfig.dart';
 void startProduction() {
   AppConfig.getInstance(
     appName: 'PRODUCTION',
-    flavorName: 'production',
+    flavorName: 'prod',
     apiBaseUrl: 'https://myservice.production/api/v1',
   );
 }
@@ -13,7 +13,7 @@ void startProduction() {
 void startDevelopment() {
   AppConfig.getInstance(
     appName: 'DEVELOPMENT',
-    flavorName: 'development',
+    flavorName: 'dev',
     apiBaseUrl: 'https://myservice.production/api/v1',
   );
 }
@@ -23,9 +23,10 @@ void getFlavor() {
       .invokeMethod<String>('getFlavor')
       .then((String flavor) {
     print('STARTED WITH FLAVOR $flavor');
-    if (flavor == 'production') {
+
+    if (flavor == 'prod') {
       startProduction();
-    } else if (flavor == 'development') {
+    } else if (flavor == 'dev') {
       startDevelopment();
     }
 // add other environments here
