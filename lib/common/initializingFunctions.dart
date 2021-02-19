@@ -22,7 +22,7 @@ void getFlavor() {
   const MethodChannel('flavor')
       .invokeMethod<String>('getFlavor')
       .then((String flavor) {
-    print('STARTED WITH FLAVOR $flavor');
+    print('🟢🟢🟢 STARTED WITH FLAVOR $flavor');
 
     if (flavor == 'prod') {
       startProduction();
@@ -32,6 +32,6 @@ void getFlavor() {
 // add other environments here
   }).catchError((error) {
     print(error);
-    print('FAILED TO LOAD FLAVOR');
+    print('🟢🟢🟢 FAILED TO LOAD FLAVOR');
   });
 }
