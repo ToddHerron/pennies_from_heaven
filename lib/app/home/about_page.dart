@@ -1,4 +1,4 @@
-import 'package:pennies_from_heaven/common_widgets/avatar.dart';
+import 'package:pennies_from_heaven/common/avatar.dart';
 import 'package:pennies_from_heaven/models/avatar_reference.dart';
 import 'package:pennies_from_heaven/services/firestore_service.dart';
 import 'package:flutter/material.dart';

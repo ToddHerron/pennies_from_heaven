@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:pennies_from_heaven/app/home/about_page.dart';
-import 'package:pennies_from_heaven/common_widgets/avatar.dart';
+import 'package:pennies_from_heaven/common/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:pennies_from_heaven/models/avatar_reference.dart';
 import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
