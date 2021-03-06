@@ -38,8 +38,10 @@ class MyApp extends StatelessWidget {
             return AuthWidgetBuilder(builder: (context, userSnapshot) {
               return MaterialApp(
                 theme: ThemeData(primarySwatch: Colors.indigo),
-                home: AuthWidget(
-                  userSnapshot: userSnapshot,
+                home: SafeArea(
+                  child: AuthWidget(
+                    userSnapshot: userSnapshot,
+                  ),
                 ),
               );
             });
