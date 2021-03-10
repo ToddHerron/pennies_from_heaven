@@ -1,6 +1,8 @@
 import 'dart:io';
 
-import 'package:firebase_storage/firebase_storage.dart';
+import 'dart:async';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:flutter/material.dart';
 import 'package:pennies_from_heaven/services/firestore_path.dart';
 import 'package:flutter/foundation.dart';
 
@@ -22,14 +24,29 @@ class FirebaseStorageService {
     @required String contentType,
   }) async {
     // print('uploading to: $path');
-    final storageReference = FirebaseStorage.instance.ref().child(path);
-    final uploadTask = storageReference.putFile(
-        file, StorageMetadata(contentType: contentType));
-    final snapshot = await uploadTask.onComplete;
-    if (snapshot.error != null) {
-      print('upload error code: ${snapshot.error}');
-      throw snapshot.error;
+    firebase_storage.UploadTask uploadTask;
+
+    final storageReference =
+        firebase_storage.FirebaseStorage.instance.ref().child(path);
+
+    final metadata =
+        firebase_storage.SettableMetadata(contentType: contentType);
+
+    if (kIsWeb) {
+      uploadTask = storageReference.putData(await file.readAsBytes(), metadata);
+    } else {
+      uploadTask = storageReference.putFile(File(file.path), metadata);
     }
+
+    final snapshot = await uploadTask;
+
+    uploadTask.onError((error, stackTrace) => null);
+
+    /* if (snapshot. != null) {
+      print('upload error code: ${snapshot.error}');
+      throw snapshot. error;
+    } */
+
     // Url used to download file/image
     final downloadUrl = await snapshot.ref.getDownloadURL();
     // print('downloadUrl: $downloadUrl');

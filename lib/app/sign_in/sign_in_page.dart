@@ -23,7 +23,7 @@ class SignInPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Text('Sign in anonymously'),
               onPressed: () => _signInAnonymously(context),
             ),

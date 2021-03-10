@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
             onPressed: () => _onAbout(context),
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text(
                 'Logout',
                 style: TextStyle(

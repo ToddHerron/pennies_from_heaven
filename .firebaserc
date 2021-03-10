@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "pennies-from-heaven---de-fe0ac",
+    "prod": "pennies-from-heaven",
+    "dev": "pennies-from-heaven---de-fe0ac",
+    "discard": "friendlyeats-e0e2a"
+  }
+}

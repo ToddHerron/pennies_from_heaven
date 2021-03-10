@@ -1,6 +1,6 @@
 {
-    "name": "pennies_from_heaven",
-    "short_name": "pennies_from_heaven",
+    "name": "pennies from heaven (long)",
+    "short_name": "pennies from heaven (short)",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
