@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:pennies_from_heaven/models/build_flavor.dart';
+import 'package:pennies_from_heaven/models/firebase_project_alias.dart';
 import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -30,9 +30,10 @@ class SignInPage extends StatelessWidget {
           ),
           Center(
             child: StreamBuilder<Object>(
-                stream: GetIt.I<BuildFlavor>().stream$,
+                // stream: GetIt.I<BuildFlavor>().stream$,
+                stream: GetIt.I<FirebaseProjectAlias>().stream$,
                 builder: (context, snapshot) {
-                  return Text('Flavor = ${snapshot.data}');
+                  return Text('Firebase Project Alias = ${snapshot.data}');
                 }),
           )
         ],
