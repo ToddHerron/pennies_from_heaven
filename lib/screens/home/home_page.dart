@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:image_picker/image_picker.dart';
-import 'package:pennies_from_heaven/app/home/about_page.dart';
+import 'package:pennies_from_heaven/screens/home/about_page.dart';
 import 'package:pennies_from_heaven/common/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:pennies_from_heaven/models/avatar_reference.dart';
@@ -64,17 +64,21 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Home'),
+          elevation: 0.0,
           leading: IconButton(
             icon: Icon(Icons.help),
             onPressed: () => _onAbout(context),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text(
-                'Logout',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               onPressed: () => _signOut(context),

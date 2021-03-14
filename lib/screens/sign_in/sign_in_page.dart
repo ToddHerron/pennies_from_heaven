@@ -9,16 +9,16 @@ class SignInPage extends StatelessWidget {
     try {
       final auth = context.read<FirebaseAuthService>();
       final user = await auth.signInAnonymously();
-      print("uid = ${user.uid}");
+      print("🟩 🟩 🟩  uid = ${user.uid}");
     } catch (e) {
-      print(e);
+      print("🟥 🟥 🟥  Sign In Anonymously error " + e.toString());
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign in')),
+      appBar: AppBar(title: Text('Sign in'), elevation: 0.0),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -33,7 +33,10 @@ class SignInPage extends StatelessWidget {
                 // stream: GetIt.I<BuildFlavor>().stream$,
                 stream: GetIt.I<FirebaseProjectAlias>().stream$,
                 builder: (context, snapshot) {
-                  return Text('Firebase Project Alias = ${snapshot.data}');
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Firebase Project Alias = ${snapshot.data}'),
+                  );
                 }),
           )
         ],

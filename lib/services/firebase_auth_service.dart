@@ -9,8 +9,6 @@ class User {
 
 class FirebaseAuthService {
   final _firebaseAuth = auth.FirebaseAuth.instance;
-  // final _firebaseAuth = auth.FirebaseAuth.instanceFor();
-  // final _firebaseAuth = auth.FirebaseAuth.instance.currentUser;
 
   User _userFromFirebase(auth.User user) {
     return user == null ? null : User(uid: user.uid);
@@ -20,10 +18,24 @@ class FirebaseAuthService {
     return _firebaseAuth.authStateChanges().map(_userFromFirebase);
   }
 
+  // Sign in Anonymously
+
+  // TODO Create more graceful error handling
+
   Future<User> signInAnonymously() async {
-    final authResult = await _firebaseAuth.signInAnonymously();
-    return _userFromFirebase(authResult.user);
+    try {
+      auth.UserCredential userCredential =
+          await _firebaseAuth.signInAnonymously();
+      return _userFromFirebase(userCredential.user);
+    } catch (e) {
+      print('🟥 🟥 🟥 Error ' + e.toString());
+      return null;
+    }
   }
+
+  // Register with email and password
+
+  // Sign in with email and password
 
   Future<void> signOut() async {
     return await _firebaseAuth.signOut();

@@ -1,8 +1,8 @@
-import 'package:pennies_from_heaven/app/auth_widget.dart';
+import 'package:pennies_from_heaven/screens/auth_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
-import 'package:pennies_from_heaven/app/auth_widget_builder.dart';
+import 'package:pennies_from_heaven/screens/auth_widget_builder.dart';
 import 'package:pennies_from_heaven/common/constants.dart';
 import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 import 'package:pennies_from_heaven/services/image_picker_service.dart';
