@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pennies_from_heaven/models/user.dart';
 import 'package:pennies_from_heaven/services/firebase_auth_service.dart';
 import 'package:pennies_from_heaven/services/firebase_storage_service.dart';
 import 'package:pennies_from_heaven/services/firestore_service.dart';

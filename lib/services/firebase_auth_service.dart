@@ -1,12 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
+import 'package:pennies_from_heaven/models/user.dart';
 
 @immutable
-class User {
-  const User({@required this.uid});
-  final String uid;
-}
-
 class FirebaseAuthService {
   final _firebaseAuth = auth.FirebaseAuth.instance;
 
